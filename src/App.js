@@ -36,7 +36,7 @@ class App extends Component {
     const filteredMonsters = monsters.filter((monster) => {
       return monster.name.toLocaleLowerCase().includes(searchField);
     });
-
+    
     return (
       <div className='App'>
         <input
