@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import CardList from './components/card-list/card-list.component';
+import SearchBox from './components/search-box/search-box.component';
 import './App.css';
 
 class App extends Component {
@@ -36,11 +37,13 @@ class App extends Component {
     const filteredMonsters = monsters.filter((monster) => {
       return monster.name.toLocaleLowerCase().includes(searchField);
     });
-    
+
     return (
       <div className='App'>
-        
-
+        <SearchBox
+          onChangeHandler={onSearchChange}
+          placeholder='Search Monsters'
+        />
         <CardList monsters={filteredMonsters} />
       </div>
     );
