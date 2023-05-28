@@ -10,27 +10,19 @@ class App extends Component {
       monsters: [],
       searchField: '',
     };
-    console.log('constructor');
   }
 
   componentDidMount() {
-    console.log('componentDidMount');
     fetch('https://jsonplaceholder.typicode.com/users')
       .then((response) => response.json())
       .then((users) =>
-        this.setState(
-          () => {
-            return { monsters: users };
-          },
-          () => {
-            console.log(this.state);
-          }
-        )
+        this.setState(() => {
+          return { monsters: users };
+        })
       );
   }
 
   onSearchChange = (event) => {
-    console.log(event.target.value);
     const searchField = event.target.value.toLocaleLowerCase();
 
     this.setState(() => {
@@ -39,8 +31,6 @@ class App extends Component {
   };
 
   render() {
-    console.log('render');
-
     const { monsters, searchField } = this.state;
     const { onSearchChange } = this;
     const filteredMonsters = monsters.filter((monster) => {
@@ -62,7 +52,7 @@ class App extends Component {
             </div>
           );
         })} */}
-        <CardList monsters={'I am the monster'}/>
+        <CardList monsters={'I am the monster'} />
       </div>
     );
   }
