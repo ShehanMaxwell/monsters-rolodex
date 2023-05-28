@@ -2,8 +2,15 @@ import { Component } from 'react';
 
 class CardList extends Component {
   render() {
-    console.log(this.props );
-    return <div>Hello im the card list Component</div>;
+    const { monsters } = this.props;
+    console.log(this.props);
+    return (
+      <div>
+        {monsters.mao((monster) => (
+          <h1>{monster.name}</h1>
+        ))}
+      </div>
+    );
   }
 }
 
