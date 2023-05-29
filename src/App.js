@@ -4,10 +4,13 @@ import SearchBox from './components/search-box/search-box.component';
 import './App.css';
 
 const App = () => {
+  console.log('render');
   const [searchField, setSearchField] = useState(''); // [value, setValue]
+  console.log(searchField);
 
   const onSearchChange = (event) => {
     const searchFieldString = event.target.value.toLocaleLowerCase();
+    setSearchField(searchFieldString);
   };
   return (
     <div className='App'>
@@ -17,7 +20,7 @@ const App = () => {
         onChangeHandler={onSearchChange}
         placeholder='Search Monsters'
       />
-      {<CardList monsters={filteredMonsters} />}
+      {/* {<CardList monsters={filteredMonsters} />} */}
     </div>
   );
 };
