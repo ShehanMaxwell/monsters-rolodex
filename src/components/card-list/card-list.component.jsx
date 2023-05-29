@@ -7,6 +7,8 @@ const CardList = ({ monsters }) => (
       return <Card monster={monster} />;
     })}
   </div>
+
 );
 
 export default CardList;
+//nice
