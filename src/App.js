@@ -7,12 +7,13 @@ const App = () => {
   return (
     <div className='App'>
       <h1 className='app-title'>Maxwell Monsters</h1>
-      {/* <SearchBox
+       <SearchBox
           className='monsters-search-box'
           onChangeHandler={onSearchChange}
           placeholder='Search Monsters'
         />
-        <CardList monsters={filteredMonsters} /> */}
+      {
+        <CardList monsters={filteredMonsters} /> }
     </div>
   );
 };
