@@ -1,15 +1,13 @@
-import { Component } from 'react';
+import { useState } from 'react';
 import CardList from './components/card-list/card-list.component';
 import SearchBox from './components/search-box/search-box.component';
 import './App.css';
 
 const App = () => {
-  const onSearchChange = (event) => {
-    const searchField = event.target.value.toLocaleLowerCase();
+  const [searchField, setSearchField] = useState(''); // [value, setValue]
 
-    this.setState(() => {
-      return { searchField };
-    });
+  const onSearchChange = (event) => {
+    const searchFieldString = event.target.value.toLocaleLowerCase();
   };
   return (
     <div className='App'>
