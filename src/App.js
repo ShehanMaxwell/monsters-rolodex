@@ -4,16 +4,22 @@ import SearchBox from './components/search-box/search-box.component';
 import './App.css';
 
 const App = () => {
+  const onSearchChange = (event) => {
+    const searchField = event.target.value.toLocaleLowerCase();
+
+    this.setState(() => {
+      return { searchField };
+    });
+  };
   return (
     <div className='App'>
       <h1 className='app-title'>Maxwell Monsters</h1>
-       <SearchBox
-          className='monsters-search-box'
-          onChangeHandler={onSearchChange}
-          placeholder='Search Monsters'
-        />
-      {
-        <CardList monsters={filteredMonsters} /> }
+      <SearchBox
+        className='monsters-search-box'
+        onChangeHandler={onSearchChange}
+        placeholder='Search Monsters'
+      />
+      {<CardList monsters={filteredMonsters} />}
     </div>
   );
 };
