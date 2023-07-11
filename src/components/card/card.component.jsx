@@ -14,4 +14,4 @@ const Card = ({ monster }) => {
   );
 };
 
-export default Card;
+export default Card;//
